@@ -1,0 +1,30 @@
+package com.rajesh.hospital.hospitalmanagement.controller;
+
+import com.rajesh.hospital.hospitalmanagement.dto.AppointmentResponseDto;
+import com.rajesh.hospital.hospitalmanagement.service.AppointmentService;
+import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
+
+@RestController
+@RequestMapping("/doctors")
+public class DoctorController {
+
+    private final AppointmentService appointmentService;
+
+    
+    public DoctorController(AppointmentService appointmentService) {
+        this.appointmentService = appointmentService;
+    }
+
+    
+    @GetMapping("/appointments")
+    public ResponseEntity<List<AppointmentResponseDto>> getAllAppointmentsOfDoctor() {
+        return ResponseEntity.ok(appointmentService.getAllAppointmentsOfDoctor(1L));
+    }
+
+}
