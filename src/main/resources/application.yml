@@ -9,14 +9,14 @@ spring:
           #   scope:
           #     - read:user
           google:
-            client-id: your-google-client-id
-            client-secret: your-google-client-secret
+            client-id: test_id
+            client-secret: test_secret
             scope:
               - profile
               - email
           
           github:
-            client-id: Ov23lilx1V6TDSzQQhd1
-            client-secret: d1c183408b5b6bd8e9faa1373eebaac88ffd655c
+            client-id: test_id
+            client-secret: test_secret
             scope:
               - user:email
